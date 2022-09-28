@@ -5,9 +5,10 @@ using UnityEngine;
 public class AttackPoint : MonoBehaviour
 {
 
+    private float attackCooldown = 0.0f;
     public int damage = 1;
     private bool ableAttack = false;
-    public GameObject Enemy;
+    private MonoBehaviour Enemy;        //fixed, dont have to manually select enemy anymore.
 
     private Rigidbody2D rb;
     Vector3 right = new Vector3(1, 0, 0);
@@ -22,7 +23,7 @@ public class AttackPoint : MonoBehaviour
         if(ableAttack)
         {
             Debug.Log("Attacked");
-            Enemy.GetComponent<EnemyController>().takeDamage(damage);
+            Enemy.GetComponent<EnemyController>().takeDamage(damage); 
         }
     }
 
@@ -34,6 +35,7 @@ public class AttackPoint : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        attackCooldown = attackCooldown - Time.deltaTime;
         if (Input.GetKeyDown("w"))
         {
             transform.position = transform.parent.position + up;
@@ -52,7 +54,12 @@ public class AttackPoint : MonoBehaviour
         }
         if(Input.GetKeyDown("f"))
         {
-            Attack();
+            if(attackCooldown <= 0.0f)
+            {
+                Attack();
+                attackCooldown = 1.0f;
+            }
+            
         }
     }
 
@@ -62,6 +69,7 @@ public class AttackPoint : MonoBehaviour
         if(Other.tag == "Enemy")
         {
             ableAttack = true;
+            Enemy = Other.transform.GetComponent<EnemyController>(); //gets specific collided enemy's script.
         }
     }
 
