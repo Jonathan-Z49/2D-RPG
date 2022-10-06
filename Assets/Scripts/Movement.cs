@@ -9,14 +9,14 @@ public class Movement : MonoBehaviour
     //private float _DIRECTION_X = 0f;
     //private float _DIRECTION_Y = 0f;
     private Rigidbody2D playerRigidBody;
-    public Animator animator;
-
+    private Animator animator;
     Vector2 movement;
 
     // Start is called before the first frame update
     void Start()
     {
         playerRigidBody = GetComponent<Rigidbody2D>();
+        animator = GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -24,16 +24,20 @@ public class Movement : MonoBehaviour
     {
         movement.x = Input.GetAxisRaw("Horizontal"); 
         movement.y = Input.GetAxisRaw("Vertical"); 
-        /*_DIRECTION_X = Input.GetAxisRaw("Horizontal");
-        _DIRECTION_Y = Input.GetAxisRaw("Vertical");
-        playerRigidBody.velocity = new Vector2(_DIRECTION_X * _SPEED, _DIRECTION_Y * _SPEED);*/
+        
         animator.SetFloat("Horizontal", movement.x);
         animator.SetFloat("Vertical", movement.y);
-        animator.SetFloat("Speed", movement.sqrMagnitude);
+
+        if(Input.GetAxisRaw("Horizontal") == 1 || Input.GetAxisRaw("Horizontal") == -1 || Input.GetAxisRaw("Vertical") == 1 || Input.GetAxisRaw("Vertical") == -1)
+        {
+            animator.SetFloat(("LastHmove"), Input.GetAxisRaw("Horizontal"));
+            animator.SetFloat(("LastVmove"), Input.GetAxisRaw("Vertical"));
+        }
+
     }
 
     void FixedUpdate()
     {
-        playerRigidBody.MovePosition(playerRigidBody.position + movement * _SPEED * Time.deltaTime);
+      playerRigidBody.MovePosition(playerRigidBody.position + movement * _SPEED * Time.deltaTime);
     }
 }
