@@ -22,8 +22,8 @@ public class AttackPoint : MonoBehaviour
     {
         if(ableAttack)
         {
-            Debug.Log("Attacked");
-            Enemy.GetComponent<EnemyController>().takeDamage(damage); 
+            //Debug.Log("Attacked");
+            Enemy.GetComponent<SlimeController>().takeDamage(damage); 
         }
     }
 
@@ -69,7 +69,7 @@ public class AttackPoint : MonoBehaviour
         if(Other.tag == "Enemy")
         {
             ableAttack = true;
-            Enemy = Other.transform.GetComponent<EnemyController>(); //gets specific collided enemy's script.
+            Enemy = Other.transform.GetComponent<SlimeController>(); //gets specific collided enemy's script.
         }
     }
 
