@@ -12,6 +12,7 @@ public class SlimeController : MonoBehaviour
     private Rigidbody2D rb;
     private float _SPEED = .005f;
     private float timer = 1.2f;     //timer for death animation, need to find better way of doing this
+    public GameObject CoinPrefab; 
 
     public Animator animator;
 
@@ -48,11 +49,16 @@ public class SlimeController : MonoBehaviour
         else{animator.SetBool("Moving", false);}
 
         if(health <= 0)
-        {
+        {   
+            _SPEED = 0f;
             animator.SetBool("Dead", true);
             timer = timer - Time.deltaTime;
-            if(timer <= 0)
-            Destroy(gameObject);
+            if(timer <= 0){
+                Destroy(gameObject);
+                for(int i = 3; i > 0; i--){
+                    Instantiate(CoinPrefab, transform.position, Quaternion.identity);
+                }
+            }
             //Debug.Log("died");
         }
     }
