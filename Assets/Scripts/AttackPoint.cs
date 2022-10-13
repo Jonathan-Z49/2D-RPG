@@ -4,8 +4,9 @@ using UnityEngine;
 
 public class AttackPoint : MonoBehaviour
 {
-
+    private GameObject player;
     private float attackCooldown = 0.0f;
+    private float animCooldown = .20f;
     public int damage = 1;
     private bool ableAttack = false;
     private MonoBehaviour Enemy;        //fixed, dont have to manually select enemy anymore.
@@ -19,7 +20,10 @@ public class AttackPoint : MonoBehaviour
     // Start is called before the first frame update
 
     void Attack()
-    {
+    {   
+        player.GetComponent<Movement>().setSpeed(0f);
+        player.GetComponent<Animator>().SetBool("isAttacking", true);
+        animCooldown = .20f;
         if(ableAttack)
         {
             //Debug.Log("Attacked");
@@ -29,6 +33,7 @@ public class AttackPoint : MonoBehaviour
 
     void Start()
     {
+        player = transform.parent.gameObject;
         rb = GetComponent<Rigidbody2D>();
     }
 
@@ -36,6 +41,12 @@ public class AttackPoint : MonoBehaviour
     void Update()
     {
         attackCooldown = attackCooldown - Time.deltaTime;
+        animCooldown -= Time.deltaTime;
+        if(animCooldown <= 0)
+        {
+            player.GetComponent<Animator>().SetBool("isAttacking", false);
+            player.GetComponent<Movement>().setSpeed(7.0f);
+        }
         if (Input.GetKeyDown("w"))
         {
             transform.position = transform.parent.position + up;
@@ -57,7 +68,7 @@ public class AttackPoint : MonoBehaviour
             if(attackCooldown <= 0.0f)
             {
                 Attack();
-                attackCooldown = 1.0f;
+                attackCooldown = .75f;
             }
             
         }
