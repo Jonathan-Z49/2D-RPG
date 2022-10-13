@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Movement : MonoBehaviour
 {
-
+    private int coins;
     private float _SPEED = 7.0f;
     //private float _DIRECTION_X = 0f;
     //private float _DIRECTION_Y = 0f;
@@ -44,8 +44,15 @@ public class Movement : MonoBehaviour
       playerRigidBody.MovePosition(playerRigidBody.position + movement * _SPEED * Time.deltaTime);
     }
 
+
     public void setSpeed(float s)
     {
         _SPEED = s;
+     }
+
+    public void addCoins(int amount)
+    {
+        coins += amount;
+        //Debug.Log("added: " + amount + ", total: " + coins);
     }
 }
