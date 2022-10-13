@@ -10,6 +10,8 @@ public class Movement : MonoBehaviour
     //private float _DIRECTION_Y = 0f;
     private Rigidbody2D playerRigidBody;
     private Animator animator;
+    private float attackCounter;
+    private bool isAttacking;
     Vector2 movement;
 
     // Start is called before the first frame update
@@ -22,6 +24,7 @@ public class Movement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        playerRigidBody.MovePosition(playerRigidBody.position + movement * _SPEED * Time.deltaTime);
         movement.x = Input.GetAxisRaw("Horizontal"); 
         movement.y = Input.GetAxisRaw("Vertical"); 
         
@@ -39,5 +42,10 @@ public class Movement : MonoBehaviour
     void FixedUpdate()
     {
       playerRigidBody.MovePosition(playerRigidBody.position + movement * _SPEED * Time.deltaTime);
+    }
+
+    public void setSpeed(float s)
+    {
+        _SPEED = s;
     }
 }
