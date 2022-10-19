@@ -8,7 +8,7 @@ public class CameraFollowPlayer : MonoBehaviour
     public Transform player;
     void Start()
     {
-        player = GameObject.Find("Bear_Knight").transform;        
+        player = GameObject.FindWithTag("Player").transform;        
     }
 
     // Update is called once per frame

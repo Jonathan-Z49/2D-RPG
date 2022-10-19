@@ -21,7 +21,7 @@ public class TutorialUI : MonoBehaviour
     private bool spawned = false;
     void Start()
     {
-        player = GameObject.Find("Bear_Knight");
+        player = GameObject.FindWithTag("Player");
         playerScript = player.GetComponent<Movement>();
         coinText = coinCounterUI.GetComponent<Text>();
         img = ImageUI.GetComponent<Image>();
