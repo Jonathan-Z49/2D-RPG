@@ -10,12 +10,20 @@ public class TutorialUI : MonoBehaviour
     public Sprite[] keys;
     public GameObject ImageUI;
     public GameObject instructions;
+    public GameObject coinCounterUI;
     public GameObject Enemy;
+    public GameObject player;
+    private Movement playerScript;
+
     private Image img;
     private TextMeshProUGUI text;
+    private Text coinText;
     private bool spawned = false;
     void Start()
     {
+        player = GameObject.FindWithTag("Player");
+        playerScript = player.GetComponent<Movement>();
+        coinText = coinCounterUI.GetComponent<Text>();
         img = ImageUI.GetComponent<Image>();
         text = instructions.GetComponent<TextMeshProUGUI>();
         text.text = "Press the \n\n\n Key to move Forward";
@@ -26,6 +34,9 @@ public class TutorialUI : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
+        coinText.text = "X " + playerScript.coins.ToString();
+        Debug.Log(playerScript.coins);
 
         if (Input.GetKeyDown(KeyCode.W) && img.sprite == keys[0])
         {
