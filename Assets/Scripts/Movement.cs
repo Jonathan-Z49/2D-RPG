@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Movement : MonoBehaviour
 {
-    private int coins;
+    public int coins;
     private float _SPEED = 7.0f;
     //private float _DIRECTION_X = 0f;
     //private float _DIRECTION_Y = 0f;
