@@ -36,7 +36,7 @@ public class TutorialUI : MonoBehaviour
     {
 
         coinText.text = "X " + playerScript.coins.ToString();
-        Debug.Log(playerScript.coins);
+        //Debug.Log(playerScript.coins);
 
         if (Input.GetKeyDown(KeyCode.W) && img.sprite == keys[0])
         {
