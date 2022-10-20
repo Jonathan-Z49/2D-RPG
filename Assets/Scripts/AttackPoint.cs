@@ -5,6 +5,7 @@ using UnityEngine;
 public class AttackPoint : MonoBehaviour
 {
     private GameObject player;
+    public MonoBehaviour npc;
     private float attackCooldown = 0.0f;
     private float animCooldown = .20f;
     public int damage = 1;
@@ -35,6 +36,8 @@ public class AttackPoint : MonoBehaviour
     {
         player = transform.parent.gameObject;
         rb = GetComponent<Rigidbody2D>();
+        transform.position = transform.parent.position + up;
+       
     }
 
     // Update is called once per frame
@@ -70,13 +73,21 @@ public class AttackPoint : MonoBehaviour
                 Attack();
                 attackCooldown = .75f;
             }
-            
+        }
+        if(Input.GetKeyDown("space"))
+        {
+            npc.GetComponent<TutorialNPC>().hideDialogue();
         }
     }
 
     void OnTriggerEnter2D(Collider2D Other)
     {
-        
+        if(Other.tag == "NPC")
+        {
+            
+            npc = Other.transform.GetComponent<TutorialNPC>(); //gets specific collided enemy's script.
+        }
+
         if(Other.tag == "Enemy")
         {
             ableAttack = true;

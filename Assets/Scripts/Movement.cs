@@ -19,6 +19,7 @@ public class Movement : MonoBehaviour
     {
         playerRigidBody = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
+        animator.SetFloat("LastVmove", 1);
     }
 
     // Update is called once per frame
