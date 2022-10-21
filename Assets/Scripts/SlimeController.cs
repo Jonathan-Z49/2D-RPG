@@ -69,6 +69,10 @@ public class SlimeController : MonoBehaviour
         {
             inRange = true;
         }
+        if (Other.tag == "Arrow")
+        {
+            takeDamage(1);
+        }
     }
 
     void OnTriggerExit2D(Collider2D Other)
