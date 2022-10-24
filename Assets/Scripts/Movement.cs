@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class Movement : MonoBehaviour
 {
+    public int currentHealth;
+    private int maxHealth = 10;
+    public HealthBar healthBar;
     public int coins;
     private float _SPEED = 7.0f;
     //private float _DIRECTION_X = 0f;
@@ -17,6 +20,7 @@ public class Movement : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        currentHealth = maxHealth;
         playerRigidBody = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
         animator.SetFloat("LastVmove", 1);
@@ -38,6 +42,15 @@ public class Movement : MonoBehaviour
             animator.SetFloat(("LastVmove"), Input.GetAxisRaw("Vertical"));
         }
 
+        //health bar debugging
+        if(Input.GetKeyDown("i"))
+        {
+            this.takeDamage(1);
+        }
+        if(Input.GetKeyDown("o"))
+        {
+            increaseMaxHealth();
+        }
     }
 
     void FixedUpdate()
@@ -56,4 +69,20 @@ public class Movement : MonoBehaviour
         coins += amount;
         //Debug.Log("added: " + amount + ", total: " + coins);
     }
+
+    public void takeDamage(int dam)
+    {
+        currentHealth -= dam;
+        healthBar.setHealth(currentHealth);
+    }
+
+    public void increaseMaxHealth()
+    {
+        maxHealth += 1;
+        healthBar.setMaxHealth(maxHealth);
+        currentHealth = maxHealth;
+        healthBar.setHealth(currentHealth);
+
+    }
+
 }
