@@ -23,6 +23,7 @@ public class Movement : MonoBehaviour
         currentHealth = maxHealth;
         playerRigidBody = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
+        animator.SetFloat("LastVmove", 1);
     }
 
     // Update is called once per frame
