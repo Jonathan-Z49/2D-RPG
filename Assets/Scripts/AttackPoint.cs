@@ -66,7 +66,7 @@ public class AttackPoint : MonoBehaviour
         {
             transform.position = transform.parent.position + right;
         }
-        if(Input.GetKeyDown("f"))
+        if(Input.GetMouseButtonDown(0))
         {
             if(attackCooldown <= 0.0f)
             {

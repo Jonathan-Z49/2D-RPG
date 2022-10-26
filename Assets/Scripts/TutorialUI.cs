@@ -62,7 +62,7 @@ public class TutorialUI : MonoBehaviour
         if (text.text == "")
         {
             Enemy.SetActive(true);
-            text.text = "Press the \n\n\n Key to Attack the enemy";
+            text.text = "Press the \n\n\n Button to Attack the enemy";
             img.sprite = keys[4];
             ImageUI.SetActive(true);
             spawned = true;
