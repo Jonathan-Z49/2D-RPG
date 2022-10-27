@@ -10,6 +10,8 @@ public class AttackPoint : MonoBehaviour
     private float animCooldown = .20f;
     public int damage = 1;
     private bool ableAttack = false;
+    private bool npcFlag = false;
+    
     private MonoBehaviour Enemy;        //fixed, dont have to manually select enemy anymore.
 
     private Rigidbody2D rb;
@@ -74,17 +76,14 @@ public class AttackPoint : MonoBehaviour
                 attackCooldown = .75f;
             }
         }
-        if(Input.GetKeyDown("space"))
-        {
-            npc.GetComponent<TutorialNPC>().hideDialogue();
-        }
+       
     }
 
     void OnTriggerEnter2D(Collider2D Other)
     {
         if(Other.tag == "NPC")
         {
-            
+           npcFlag = true; 
             npc = Other.transform.GetComponent<TutorialNPC>(); //gets specific collided enemy's script.
         }
 
@@ -97,6 +96,11 @@ public class AttackPoint : MonoBehaviour
 
     void OnTriggerExit2D(Collider2D Other)
     {
+        if(Other.tag == "NPC")
+        {
+            npcFlag = false;
+        }
+
         if(Other.tag == "Enemy")
         {
             ableAttack = false;
