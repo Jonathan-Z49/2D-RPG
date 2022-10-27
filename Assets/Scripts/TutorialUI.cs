@@ -13,6 +13,7 @@ public class TutorialUI : MonoBehaviour
     public GameObject coinCounterUI;
     public GameObject Enemy;
     public GameObject player;
+    public GameObject npc;
     private Movement playerScript;
 
     private Image img;
@@ -29,6 +30,7 @@ public class TutorialUI : MonoBehaviour
         text.text = "Press the \n\n\n Key to move Forward";
         img.sprite = keys[0];
         Enemy.SetActive(false);
+        npc = GameObject.FindWithTag("NPC");
     }
 
     // Update is called once per frame
@@ -68,9 +70,11 @@ public class TutorialUI : MonoBehaviour
             spawned = true;
         }
 
-        if(spawned && Enemy == null){
+        if(spawned && Enemy == null)
+        {
             ImageUI.SetActive(false);
             instructions.SetActive(false);
+            npc.GetComponent<TutorialNPC>().showDialogue();
         }
 
     }
