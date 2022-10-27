@@ -6,7 +6,7 @@ public class CoinController : MonoBehaviour
 {
     public GameObject player;
     private float RandSpeed;
-    private float _SPEED = 20f;
+    private float _SPEED = 5f;
     private Rigidbody2D rb;
     
 
@@ -28,9 +28,10 @@ public class CoinController : MonoBehaviour
 
     void FixedUpdate()
     {
+        transform.position = Vector3.MoveTowards(transform.position, player.transform.position, _SPEED * Time.deltaTime);
         var dif = player.transform.position - rb.transform.position;
         rb.AddForce(dif * _SPEED * Time.deltaTime);
-        _SPEED += 10f;
+        _SPEED += .1f;
     }
 
     void OnTriggerEnter2D(Collider2D Other)
