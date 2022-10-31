@@ -1718,8 +1718,9 @@ MonoBehaviour:
   dialogue:
   - Hello traveler, what you seek can be found up ahead. Here are some pointers to
     prepare you for what is to come.
-  - Looks like you are ready to move on to greater things. Good Luck!
+  - It seems you are now ready to move on. Good luck!
   wordSpeed: 0.04
+  flag: 0
 --- !u!1 &779967948
 GameObject:
   m_ObjectHideFlags: 0
