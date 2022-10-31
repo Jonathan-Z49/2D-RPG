@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class TutorialNPC : MonoBehaviour
 {
@@ -13,6 +14,7 @@ public class TutorialNPC : MonoBehaviour
     public string[] dialogue;
     private int index;
     public float wordSpeed;
+    public int flag = 0;
     
     // Start is called before the first frame update
     void Start()
@@ -29,14 +31,14 @@ public class TutorialNPC : MonoBehaviour
         }
     }
 
-    public void zeroText()
+    public void zeroText() //empties the dialogue box
     {
         dialogueText.text = "";
         index = 0;
         dialogueBox.SetActive(false);
         
     }
-    IEnumerator Typing()
+    IEnumerator Typing() //types out each individusl letter
     {
         foreach(char letter in dialogue[index].ToCharArray())
         {
@@ -44,7 +46,7 @@ public class TutorialNPC : MonoBehaviour
             yield return new WaitForSeconds(wordSpeed);
         }
     }
-    public void nextLine()
+    public void nextLine() //increases the index of the string array
     {
         contButton.SetActive(false);
         if(index < dialogue.Length -1)
@@ -63,11 +65,18 @@ public class TutorialNPC : MonoBehaviour
     {
         dialogueBox.SetActive(false);
         tutorialui.SetActive(true);
-        nextLine();
+        
+        if(flag == 1)
+        {
+            SceneManager.LoadScene("Town");
+        }
+        flag = 1;
+
     }
     public void showDialogue()
     {
         dialogueBox.SetActive(true);
+        nextLine();
         tutorialui.SetActive(false);
     }
     
