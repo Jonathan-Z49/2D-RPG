@@ -37,11 +37,12 @@ public class Dialogue : MonoBehaviour
     {
         dialogueBox.SetActive(true);
     }
-    public void Typing() //types out each individual letter
+    public IEnumerator Typing() //types out each individual letter
     {
         for (int i = 0; i < dialogueToSay.Length; i++) 
         {
            dialogueTextUI.text += dialogueToSay[i];
+            yield return new WaitForSeconds(wordSpeed);
         }
     }
 

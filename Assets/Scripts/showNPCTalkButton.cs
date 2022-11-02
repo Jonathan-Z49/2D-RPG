@@ -26,10 +26,9 @@ public class showNPCTalkButton : MonoBehaviour
         {
             if (Input.GetKeyDown("space"))
             {
-                Debug.Log(npc);
                 NPC_InstructionText.SetActive(false);
                 dialogue.showDialogueBox();
-                dialogue.Typing();
+                StartCoroutine(dialogue.Typing());
             }
         }
     }
