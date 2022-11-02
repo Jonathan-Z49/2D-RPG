@@ -396,7 +396,7 @@ GameObject:
   - component: {fileID: 251035788}
   - component: {fileID: 251035787}
   m_Layer: 0
-  m_Name: Collider
+  m_Name: potion collider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -805,7 +805,7 @@ GameObject:
   - component: {fileID: 401421746}
   - component: {fileID: 401421745}
   m_Layer: 0
-  m_Name: Collider
+  m_Name: weapon collider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1707,7 +1707,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 824232520}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -11.15, y: 6.27, z: 0}
+  m_LocalPosition: {x: -13.77, y: 6.27, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1978395988}
@@ -1727,7 +1727,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dd1bc715f9a744448b6bc68dcb514d25, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dialogueToSay: Hello Traveler!
+  dialogueToSay: Hello Traveler! Im the Weaponsmith of this town!
   dialogueTextUI: {fileID: 297473716}
   contButton: {fileID: 786298582}
   dialogueBox: {fileID: 482028619}
@@ -1845,7 +1845,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dd1bc715f9a744448b6bc68dcb514d25, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dialogueToSay: Hello Traveler!
+  dialogueToSay: Hello Traveler! Im the Potion maker of this town!
   dialogueTextUI: {fileID: 297473716}
   contButton: {fileID: 786298582}
   dialogueBox: {fileID: 482028619}
@@ -2546,7 +2546,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dd1bc715f9a744448b6bc68dcb514d25, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dialogueToSay: Hello Traveler! a
+  dialogueToSay: Hello Traveler! Im the Mayor of this town!
   dialogueTextUI: {fileID: 297473716}
   contButton: {fileID: 786298582}
   dialogueBox: {fileID: 482028619}
@@ -2636,7 +2636,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1054881075}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -6.72, y: 6.27, z: 0}
+  m_LocalPosition: {x: -8.12, y: 6.27, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1148384955}
@@ -2657,7 +2657,7 @@ GameObject:
   - component: {fileID: 1145045915}
   - component: {fileID: 1145045914}
   m_Layer: 0
-  m_Name: Collider
+  m_Name: mayor collider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
