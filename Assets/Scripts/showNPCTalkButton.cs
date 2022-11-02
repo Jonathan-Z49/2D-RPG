@@ -10,6 +10,7 @@ public class showNPCTalkButton : MonoBehaviour
     private GameObject player;
     private GameObject npc;
     private Dialogue dialogue;
+    private float distanceToPlayer;
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player");
@@ -21,8 +22,8 @@ public class showNPCTalkButton : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
-        if (NPC_InstructionText.activeSelf)
+        distanceToPlayer = Vector2.Distance(transform.position, player.transform.position);
+        if (NPC_InstructionText.activeSelf && distanceToPlayer < 3.0f)
         {
             if (Input.GetKeyDown("space"))
             {
@@ -34,6 +35,7 @@ public class showNPCTalkButton : MonoBehaviour
     }
 
     void OnTriggerEnter2D(Collider2D other) {
+        Debug.Log(this);
         NPC_InstructionText.SetActive(true);
     }
     void OnTriggerExit2D(Collider2D other) {
