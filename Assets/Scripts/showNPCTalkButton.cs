@@ -9,14 +9,13 @@ public class showNPCTalkButton : MonoBehaviour
     public GameObject NPC_InstructionText;
     private GameObject player;
     private GameObject npc;
-    private Dialogue dialogue;
+    public Dialogue dialogue;
+    public string message;
     private float distanceToPlayer;
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player");
         npc = transform.parent.gameObject;
-        dialogue = npc.gameObject.GetComponent<Dialogue>();
-        Physics2D.IgnoreCollision(player.GetComponent<BoxCollider2D>(), GetComponent<Collider2D>());
     }
 
     // Update is called once per frame
@@ -29,13 +28,13 @@ public class showNPCTalkButton : MonoBehaviour
             {
                 NPC_InstructionText.SetActive(false);
                 dialogue.showDialogueBox();
-                StartCoroutine(dialogue.Typing());
+                dialogue.setNameOfNPC(transform.parent.name);
+                StartCoroutine(dialogue.Typing(message));
             }
         }
     }
 
     void OnTriggerEnter2D(Collider2D other) {
-        Debug.Log(this);
         NPC_InstructionText.SetActive(true);
     }
     void OnTriggerExit2D(Collider2D other) {
