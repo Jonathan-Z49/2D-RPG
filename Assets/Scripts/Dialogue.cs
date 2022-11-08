@@ -6,17 +6,15 @@ using UnityEngine.UI;
 public class Dialogue : MonoBehaviour
 {
     // Start is called before the first frame update
-    [SerializeField]
     private string dialogueToSay;
     public Text dialogueTextUI;
     public GameObject contButton;
-    public GameObject dialogueBox;
+    public Text nameOfNPC;
     private string text;
     public float wordSpeed;
     
     void Start()
     {
-    
     }
 
     // Update is called once per frame
@@ -30,15 +28,19 @@ public class Dialogue : MonoBehaviour
 
     public void hideDialogue()
     {
-        dialogueBox.SetActive(false);
+        gameObject.SetActive(false);
         zeroText();
     }
     public void showDialogueBox()
     {
-        dialogueBox.SetActive(true);
+        gameObject.SetActive(true);
     }
-    public IEnumerator Typing() //types out each individual letter
+    public void setNameOfNPC(string name) {
+        nameOfNPC.text = name;
+    }
+    public IEnumerator Typing(string message) //types out each individual letter
     {
+        dialogueToSay = message;
         for (int i = 0; i < dialogueToSay.Length; i++) 
         {
            dialogueTextUI.text += dialogueToSay[i];
@@ -49,6 +51,6 @@ public class Dialogue : MonoBehaviour
     public void zeroText() //empties the dialogue box
     {
         dialogueTextUI.text = "";
-        dialogueBox.SetActive(false);
+        gameObject.SetActive(false);
     }
 }
