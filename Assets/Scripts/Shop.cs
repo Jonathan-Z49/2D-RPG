@@ -44,7 +44,13 @@ public class Shop : MonoBehaviour
         }
     }
     public void hideShopUI() {
+        if(activeShop == null){
+
+        }
+        else{
         activeShop.SetActive(false);
+        }
+        
     }
 
     public void clickToBuy(){
