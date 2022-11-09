@@ -9,12 +9,15 @@ public class Dialogue : MonoBehaviour
     private string dialogueToSay;
     public Text dialogueTextUI;
     public GameObject contButton;
+    public GameObject shopButton;
+    private Shop shopUI;
     public Text nameOfNPC;
     private string text;
     public float wordSpeed;
     
     void Start()
     {
+        shopUI = GameObject.Find("Shop UI").GetComponent<Shop>();
     }
 
     // Update is called once per frame
@@ -29,6 +32,7 @@ public class Dialogue : MonoBehaviour
     public void hideDialogue()
     {
         gameObject.SetActive(false);
+        shopUI.hideShopUI();
         zeroText();
     }
     public void showDialogueBox()
@@ -37,6 +41,15 @@ public class Dialogue : MonoBehaviour
     }
     public void setNameOfNPC(string name) {
         nameOfNPC.text = name;
+        if (name == "Weaponsmith" || name == "Potion maker")
+        {
+            shopButton.SetActive(true);
+        } else {
+            shopButton.SetActive(false);
+        }
+    }
+    public void showShopOfNPC() {
+        shopUI.showShopUI(nameOfNPC.text);
     }
     public IEnumerator Typing(string message) //types out each individual letter
     {

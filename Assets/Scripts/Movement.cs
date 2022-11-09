@@ -69,6 +69,11 @@ public class Movement : MonoBehaviour
         coins += amount;
         //Debug.Log("added: " + amount + ", total: " + coins);
     }
+    public void subtractCoins(int amount)
+    {
+        coins -= amount;
+        //Debug.Log("added: " + amount + ", total: " + coins);
+    }
 
     public void takeDamage(int dam)
     {
