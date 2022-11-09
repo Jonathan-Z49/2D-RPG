@@ -10,7 +10,7 @@ public class Dialogue : MonoBehaviour
     public Text dialogueTextUI;
     public GameObject contButton;
     public GameObject shopButton;
-    private Shop shopUI;
+    public Shop shopUI;
     public Text nameOfNPC;
     private string text;
     public float wordSpeed;
