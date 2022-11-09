@@ -64,6 +64,7 @@ public class Dialogue : MonoBehaviour
     public void zeroText() //empties the dialogue box
     {
         dialogueTextUI.text = "";
+        dialogueToSay = "";
         gameObject.SetActive(false);
     }
 }
