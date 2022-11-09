@@ -1497,6 +1497,7 @@ MonoBehaviour:
   dialogueTextUI: {fileID: 297473716}
   contButton: {fileID: 786298582}
   shopButton: {fileID: 1939772776}
+  shopUI: {fileID: 1045064185}
   nameOfNPC: {fileID: 19440345}
   wordSpeed: 0.04
 --- !u!1 &522053424
