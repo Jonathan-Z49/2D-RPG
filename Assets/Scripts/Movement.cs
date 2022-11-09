@@ -16,6 +16,8 @@ public class Movement : MonoBehaviour
     private float attackCounter;
     private bool isAttacking;
     Vector2 movement;
+    private bool questActive = false;
+    private bool questItemHeld = false;
 
     // Start is called before the first frame update
     void Start()
@@ -88,6 +90,44 @@ public class Movement : MonoBehaviour
         currentHealth = maxHealth;
         healthBar.setHealth(currentHealth);
 
+    }
+
+    public void activateQuest()
+    {
+        questActive = true;
+    }
+
+    public void deactivateQuest()
+    {
+        questActive = false;
+    }
+
+    public bool checkActiveStatus()
+    {
+        if(questActive == true)
+        {
+            return(true);
+        }
+        else{return(false);}
+    }
+
+    public void getQuestItem()
+    {
+        questItemHeld = true;
+    }
+
+    public void removeQuestItem()
+    {
+        questItemHeld = false;
+    }
+
+    public bool checkQuestItem()
+    {
+        if(questItemHeld == true)
+        {
+            return(true);
+        }
+        else{return(false);}
     }
 
 }

@@ -11,11 +11,16 @@ public class showNPCTalkButton : MonoBehaviour
     private GameObject npc;
     public Dialogue dialogue;
     public string message;
+    public string questStartMessage;
+    public string questCompleteMessage;
     private float distanceToPlayer;
+    public Movement playerScript;
+    public GameObject questItem;
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player");
         npc = transform.parent.gameObject;
+        playerScript = player.transform.GetComponent<Movement>();
     }
 
     // Update is called once per frame
@@ -40,5 +45,27 @@ public class showNPCTalkButton : MonoBehaviour
     void OnTriggerExit2D(Collider2D other) {
         NPC_InstructionText.SetActive(false);
         dialogue.hideDialogue();
+    }
+
+    public void showQuestMessage()
+    {
+        if(playerScript.checkActiveStatus() == true && playerScript.checkQuestItem() == true)
+        {
+            playerScript.addCoins(10);
+            playerScript.deactivateQuest();
+            playerScript.removeQuestItem();
+            dialogue.dialogueToSay = " ";
+            dialogue.dialogueTextUI.text = "";
+            StartCoroutine(dialogue.Typing(questCompleteMessage));
+        }
+        else
+        {
+            questItem.SetActive(true);
+            playerScript.activateQuest();
+            dialogue.dialogueToSay = " ";
+            dialogue.dialogueTextUI.text = "";
+            StartCoroutine(dialogue.Typing(questStartMessage));
+        }
+        
     }
 }

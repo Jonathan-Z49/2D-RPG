@@ -6,10 +6,11 @@ using UnityEngine.UI;
 public class Dialogue : MonoBehaviour
 {
     // Start is called before the first frame update
-    private string dialogueToSay;
+    public string dialogueToSay;
     public Text dialogueTextUI;
     public GameObject contButton;
     public GameObject shopButton;
+    public GameObject questButton;
     public Shop shopUI;
     public Text nameOfNPC;
     private string text;
@@ -43,8 +44,10 @@ public class Dialogue : MonoBehaviour
         nameOfNPC.text = name;
         if (name == "Weaponsmith" || name == "Potion maker")
         {
+            questButton.SetActive(false);
             shopButton.SetActive(true);
         } else {
+            questButton.SetActive(true);
             shopButton.SetActive(false);
         }
     }
