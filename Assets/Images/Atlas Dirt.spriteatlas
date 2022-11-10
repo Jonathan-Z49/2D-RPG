@@ -1,0 +1,94 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!687078895 &4343727234628468602
+SpriteAtlas:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Atlas Dirt
+  m_EditorData:
+    serializedVersion: 2
+    textureSettings:
+      serializedVersion: 2
+      anisoLevel: 1
+      compressionQuality: 50
+      maxTextureSize: 2048
+      textureCompression: 0
+      filterMode: 0
+      generateMipMaps: 0
+      readable: 0
+      crunchedCompression: 0
+      sRGB: 1
+    platformSettings:
+    - serializedVersion: 3
+      m_BuildTarget: DefaultTexturePlatform
+      m_MaxTextureSize: 2048
+      m_ResizeAlgorithm: 0
+      m_TextureFormat: -1
+      m_TextureCompression: 0
+      m_CompressionQuality: 50
+      m_CrunchedCompression: 0
+      m_AllowsAlphaSplitting: 0
+      m_Overridden: 0
+      m_AndroidETC2FallbackOverride: 0
+      m_ForceMaximumCompressionQuality_BC6H_BC7: 0
+    packingSettings:
+      serializedVersion: 2
+      padding: 4
+      blockOffset: 1
+      allowAlphaSplitting: 0
+      enableRotation: 1
+      enableTightPacking: 1
+    secondaryTextureSettings: {}
+    variantMultiplier: 1
+    packables:
+    - {fileID: 2800000, guid: 17e96ac1de6583449b75f87a5983b434, type: 3}
+    totalSpriteSurfaceArea: 4848
+    bindAsDefault: 1
+    isAtlasV2: 0
+    cachedData: {fileID: 0}
+  m_MasterAtlas: {fileID: 0}
+  m_PackedSprites:
+  - {fileID: 7432613021653288291, guid: 17e96ac1de6583449b75f87a5983b434, type: 3}
+  - {fileID: 1009181664880490721, guid: 17e96ac1de6583449b75f87a5983b434, type: 3}
+  - {fileID: -3848956417982419520, guid: 17e96ac1de6583449b75f87a5983b434, type: 3}
+  - {fileID: 4443664293011959945, guid: 17e96ac1de6583449b75f87a5983b434, type: 3}
+  - {fileID: -2142289199527235693, guid: 17e96ac1de6583449b75f87a5983b434, type: 3}
+  - {fileID: 878421211547581637, guid: 17e96ac1de6583449b75f87a5983b434, type: 3}
+  - {fileID: -2401010201173978238, guid: 17e96ac1de6583449b75f87a5983b434, type: 3}
+  - {fileID: -3541953310776367626, guid: 17e96ac1de6583449b75f87a5983b434, type: 3}
+  - {fileID: 8507823591352220102, guid: 17e96ac1de6583449b75f87a5983b434, type: 3}
+  - {fileID: -7767073423445472196, guid: 17e96ac1de6583449b75f87a5983b434, type: 3}
+  - {fileID: 1878249770651439855, guid: 17e96ac1de6583449b75f87a5983b434, type: 3}
+  - {fileID: -6306090044343279241, guid: 17e96ac1de6583449b75f87a5983b434, type: 3}
+  - {fileID: 8002211967421322815, guid: 17e96ac1de6583449b75f87a5983b434, type: 3}
+  - {fileID: 2530978758587688495, guid: 17e96ac1de6583449b75f87a5983b434, type: 3}
+  - {fileID: 5032197526863586672, guid: 17e96ac1de6583449b75f87a5983b434, type: 3}
+  - {fileID: -295688498132570291, guid: 17e96ac1de6583449b75f87a5983b434, type: 3}
+  - {fileID: 1970945644744876376, guid: 17e96ac1de6583449b75f87a5983b434, type: 3}
+  - {fileID: -1726403228972873051, guid: 17e96ac1de6583449b75f87a5983b434, type: 3}
+  - {fileID: 8174193248849503831, guid: 17e96ac1de6583449b75f87a5983b434, type: 3}
+  m_PackedSpriteNamesToIndex:
+  - dirtpath_8
+  - dirtpath_9
+  - dirtpath_0
+  - dirtpath_1
+  - dirtpath_2
+  - dirtpath_3
+  - dirtpath_4
+  - dirtpath_5
+  - dirtpath_6
+  - dirtpath_7
+  - dirtpath_18
+  - dirtpath_13
+  - dirtpath_12
+  - dirtpath_11
+  - dirtpath_10
+  - dirtpath_17
+  - dirtpath_16
+  - dirtpath_15
+  - dirtpath_14
+  m_RenderDataMap: {}
+  m_Tag: Atlas Dirt
+  m_IsVariant: 0
