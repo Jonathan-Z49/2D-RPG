@@ -7,8 +7,12 @@ public class Movement : MonoBehaviour
     public int currentHealth;
     private int maxHealth = 10;
     public HealthBar healthBar;
+    private float maxStamina = 5f;
+    public StaminaBar staminaBar;
+    private float stamRecovery = 1f;
+    private float stamTimer = 2.5f;
     public int coins;
-    private float _SPEED = 7.0f;
+    private float _SPEED;
     //private float _DIRECTION_X = 0f;
     //private float _DIRECTION_Y = 0f;
     private Rigidbody2D playerRigidBody;
@@ -22,6 +26,7 @@ public class Movement : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        staminaBar.setMaxStamina(maxStamina);
         currentHealth = maxHealth;
         playerRigidBody = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
@@ -31,7 +36,7 @@ public class Movement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        playerRigidBody.MovePosition(playerRigidBody.position + movement * _SPEED * Time.deltaTime);
+        //playerRigidBody.MovePosition(playerRigidBody.position + movement * _SPEED * Time.deltaTime);
         movement.x = Input.GetAxisRaw("Horizontal"); 
         movement.y = Input.GetAxisRaw("Vertical"); 
         
@@ -53,6 +58,22 @@ public class Movement : MonoBehaviour
         {
             increaseMaxHealth();
         }
+
+        if(Input.GetKey(KeyCode.LeftShift) && staminaBar.checkStaminaValue() > 0)
+        {
+            _SPEED = 11.0f;
+            staminaBar.useStamina(Time.deltaTime);
+            setStamTimer();
+        }
+        else
+        {
+            _SPEED = 7.0f;
+            stamTimer -= Time.deltaTime;
+            if(stamTimer <= 0)
+            {
+                staminaBar.recoverStamina(stamRecovery);
+            }
+        }
     }
 
     void FixedUpdate()
@@ -64,7 +85,7 @@ public class Movement : MonoBehaviour
     public void setSpeed(float s)
     {
         _SPEED = s;
-     }
+    }
 
     public void addCoins(int amount)
     {
@@ -128,6 +149,11 @@ public class Movement : MonoBehaviour
             return(true);
         }
         else{return(false);}
+    }
+
+    public void setStamTimer()
+    {
+        stamTimer = 2f;
     }
 
 }
