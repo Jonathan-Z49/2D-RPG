@@ -20,6 +20,8 @@ public class AttackPoint : MonoBehaviour
     Vector3 up = new Vector3(0, 1, 0);
     Vector3 down = new Vector3(0, -1, 0);
 
+    public StaminaBar staminaBar;
+
     // Start is called before the first frame update
 
     void Attack()
@@ -27,10 +29,13 @@ public class AttackPoint : MonoBehaviour
         player.GetComponent<Movement>().setSpeed(0f);
         player.GetComponent<Animator>().SetBool("isAttacking", true);
         animCooldown = .20f;
+        staminaBar.useStamina(1);
+        player.GetComponent<Movement>().setStamTimer();
         if(ableAttack)
         {
             //Debug.Log("Attacked");
             Enemy.GetComponent<SlimeController>().takeDamage(damage); 
+            
         }
     }
 
@@ -50,7 +55,6 @@ public class AttackPoint : MonoBehaviour
         if(animCooldown <= 0)
         {
             player.GetComponent<Animator>().SetBool("isAttacking", false);
-            player.GetComponent<Movement>().setSpeed(7.0f);
         }
         if (Input.GetKeyDown("w"))
         {
@@ -70,7 +74,7 @@ public class AttackPoint : MonoBehaviour
         }
         if(Input.GetMouseButtonDown(0))
         {
-            if(attackCooldown <= 0.0f)
+            if(attackCooldown <= 0.0f && staminaBar.checkStaminaValue() > 0f)
             {
                 Attack();
                 attackCooldown = .75f;
