@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.EventSystems;
 using TMPro;
 
 public class Shop : MonoBehaviour
@@ -22,7 +23,6 @@ public class Shop : MonoBehaviour
         animControllerMessageSuccess = transform.Find("Purchased message").GetComponent<Animator>();
         animControllerMessageFailed = transform.Find("Unsuccessful message").GetComponent<Animator>();
         textSuccessMessage = transform.Find("Purchased message").gameObject.GetComponent<TMPro.TextMeshProUGUI>();
-        Debug.Log(textSuccessMessage);
         potionMakerShop = transform.GetChild(0).gameObject;
         weaponsmithShop = transform.GetChild(1).gameObject;
     }
@@ -30,7 +30,7 @@ public class Shop : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 
     public void showShopUI(string NPC) {
@@ -53,11 +53,14 @@ public class Shop : MonoBehaviour
         
     }
 
+    public void setItemNameObject(Text myText) {
+        itemName = myText;
+    }
+
     public void clickToBuy(){
 
         if (activeShop.activeSelf)
         {
-            itemName = activeShop.transform.Find("Item1/item container/item name").GetComponent<Text>();
             animControllerMessageFailed.ResetTrigger("fadeIn");
             animControllerMessageFailed.Rebind();
             animControllerMessageFailed.Update(0f);
