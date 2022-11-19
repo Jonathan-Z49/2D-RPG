@@ -21,6 +21,8 @@ public class AttackPoint : MonoBehaviour
     Vector3 down = new Vector3(0, -1, 0);
 
     public StaminaBar staminaBar;
+    public GameObject bow;
+    public GameObject dialogue;
 
     // Start is called before the first frame update
 
@@ -35,7 +37,6 @@ public class AttackPoint : MonoBehaviour
         {
             //Debug.Log("Attacked");
             Enemy.GetComponent<SlimeController>().takeDamage(damage); 
-            
         }
     }
 
@@ -72,7 +73,7 @@ public class AttackPoint : MonoBehaviour
         {
             transform.position = transform.parent.position + right;
         }
-        if(Input.GetMouseButtonDown(0))
+        if(Input.GetMouseButtonDown(0) && !bow.activeSelf && !dialogue.activeSelf)
         {
             if(attackCooldown <= 0.0f && staminaBar.checkStaminaValue() > 0f)
             {

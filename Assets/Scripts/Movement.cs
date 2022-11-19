@@ -12,6 +12,9 @@ public class Movement : MonoBehaviour
     private float stamRecovery = 1f;
     private float stamTimer = 2.5f;
     public int coins;
+    public int staminaPotCount = 0;
+    public int healthPotCount = 0;
+    public int arrowCount = 0;
     private float _SPEED;
     //private float _DIRECTION_X = 0f;
     //private float _DIRECTION_Y = 0f;
@@ -104,13 +107,43 @@ public class Movement : MonoBehaviour
         healthBar.setHealth(currentHealth);
     }
 
+    public void addHealthPot() {
+        healthPotCount++;
+    }
+
+    public void addStaminaPot() {
+        staminaPotCount++;
+    }
+
+    public void useStaminaPot() {
+        if (staminaPotCount > 0)
+        {
+            staminaPotCount--;
+            staminaBar.setMaxStamina(maxStamina);
+        }
+    }
+
+    public void addArrows() {
+        arrowCount++;
+    }
+
+    public void useArrow() {
+        if (arrowCount > 0)
+        {
+            arrowCount--;
+        }
+    }
+
     public void increaseMaxHealth()
     {
-        maxHealth += 1;
-        healthBar.setMaxHealth(maxHealth);
-        currentHealth = maxHealth;
-        healthBar.setHealth(currentHealth);
-
+        if (healthPotCount > 0)
+        {
+            healthPotCount--;
+            maxHealth += 1;
+            healthBar.setMaxHealth(maxHealth);
+            currentHealth = maxHealth;
+            healthBar.setHealth(currentHealth);
+        }
     }
 
     public void activateQuest()

@@ -40,11 +40,17 @@ public class showNPCTalkButton : MonoBehaviour
     }
 
     void OnTriggerEnter2D(Collider2D other) {
-        NPC_InstructionText.SetActive(true);
+        if (other.tag == "Player")
+        {
+            NPC_InstructionText.SetActive(true);
+        }
     }
     void OnTriggerExit2D(Collider2D other) {
-        NPC_InstructionText.SetActive(false);
-        dialogue.hideDialogue();
+        if (other.tag == "Player")
+        {
+            NPC_InstructionText.SetActive(false);
+            dialogue.hideDialogue();
+        }
     }
 
     public void showQuestMessage()
