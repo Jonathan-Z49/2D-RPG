@@ -15,10 +15,13 @@ public class Dialogue : MonoBehaviour
     public Text nameOfNPC;
     private string text;
     public float wordSpeed;
+    public Sprite[] npcImage;
+    public GameObject dialogueImage;
     
     void Start()
     {
         shopUI = GameObject.Find("Shop UI").GetComponent<Shop>();
+        dialogueImage = GameObject.Find("Dialogue Image");
     }
 
     // Update is called once per frame
@@ -42,13 +45,22 @@ public class Dialogue : MonoBehaviour
     }
     public void setNameOfNPC(string name) {
         nameOfNPC.text = name;
-        if (name == "Weaponsmith" || name == "Potion maker")
+        if (name == "Weaponsmith")
         {
             questButton.SetActive(false);
             shopButton.SetActive(true);
-        } else {
+            dialogueImage.GetComponent<Image>().sprite = npcImage[0];
+        }
+        else if(name == "Potion maker")
+        {
+            questButton.SetActive(false);
+            shopButton.SetActive(true);
+            dialogueImage.GetComponent<Image>().sprite = npcImage[1];
+        } 
+        else {
             questButton.SetActive(true);
             shopButton.SetActive(false);
+            dialogueImage.GetComponent<Image>().sprite = npcImage[2];
         }
     }
     public void showShopOfNPC() {
