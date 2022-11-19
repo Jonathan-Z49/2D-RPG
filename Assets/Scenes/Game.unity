@@ -7982,6 +7982,9 @@ MonoBehaviour:
   healthBar: {fileID: 128493105}
   staminaBar: {fileID: 1098120403}
   coins: 0
+  staminaPotCount: 0
+  healthPotCount: 0
+  arrowCount: 0
 --- !u!95 &1414328847
 Animator:
   serializedVersion: 3
@@ -8593,6 +8596,8 @@ MonoBehaviour:
   npc: {fileID: 0}
   damage: 1
   staminaBar: {fileID: 1098120403}
+  bow: {fileID: 1139440759}
+  dialogue: {fileID: 292193039}
 --- !u!61 &1650523545
 BoxCollider2D:
   m_ObjectHideFlags: 0
