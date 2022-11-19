@@ -57,6 +57,11 @@ public class TutorialUI : MonoBehaviour
         }
         if (Input.GetKeyDown(KeyCode.A) && img.sprite == keys[3])
         {
+            text.text = "Hold the \n\n\n key to run";
+            img.sprite = keys[4];
+        }
+        if(Input.GetKeyUp(KeyCode.LeftShift) && img.sprite == keys[4])
+        {
             text.text = "";
             ImageUI.SetActive(false);
         }
@@ -65,7 +70,7 @@ public class TutorialUI : MonoBehaviour
         {
             Enemy.SetActive(true);
             text.text = "Press the \n\n\n Button to Attack the enemy";
-            img.sprite = keys[4];
+            img.sprite = keys[5];
             ImageUI.SetActive(true);
             spawned = true;
         }

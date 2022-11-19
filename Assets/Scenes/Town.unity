@@ -2516,6 +2516,11 @@ MonoBehaviour:
   shopUI: {fileID: 1045064185}
   nameOfNPC: {fileID: 19440345}
   wordSpeed: 0.04
+  npcImage:
+  - {fileID: 21300000, guid: f2981d369899e374ea3f864d4d6f4bd8, type: 3}
+  - {fileID: 21300000, guid: 458ad9952e7b7894b86c6dcaadc1e1fc, type: 3}
+  - {fileID: 21300000, guid: 53a76cebb23bf3d49a0505fedc528d08, type: 3}
+  dialogueImage: {fileID: 2037267050}
 --- !u!1 &522053424
 GameObject:
   m_ObjectHideFlags: 0
@@ -5210,7 +5215,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0, y: -0.19548893}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -5221,7 +5226,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 1, y: 1.3909779}
   m_EdgeRadius: 0
 --- !u!212 &1054881078
 SpriteRenderer:
@@ -57808,7 +57813,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Potion maker
+  m_text: Potion Maker
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
