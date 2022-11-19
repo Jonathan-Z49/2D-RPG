@@ -61,18 +61,22 @@ public class Movement : MonoBehaviour
 
         if(Input.GetKey(KeyCode.LeftShift) && staminaBar.checkStaminaValue() > 0)
         {
-            _SPEED = 11.0f;
-            staminaBar.useStamina(Time.deltaTime);
-            setStamTimer();
+            if(animator.GetFloat("Horizontal") != 0 || animator.GetFloat("Vertical") != 0)
+            {
+                setStamTimer();
+                _SPEED = 11.0f;
+                staminaBar.useStamina(Time.deltaTime);  
+            }
         }
         else
         {
             _SPEED = 7.0f;
-            stamTimer -= Time.deltaTime;
-            if(stamTimer <= 0)
-            {
-                staminaBar.recoverStamina(stamRecovery);
-            }
+        }
+        
+        stamTimer -= Time.deltaTime;
+        if(stamTimer <= 0)
+        {
+            staminaBar.recoverStamina(stamRecovery);
         }
     }
 
