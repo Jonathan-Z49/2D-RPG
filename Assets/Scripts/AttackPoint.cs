@@ -5,7 +5,7 @@ using UnityEngine;
 public class AttackPoint : MonoBehaviour
 {
     private GameObject player;
-    public MonoBehaviour npc = null;
+    public MonoBehaviour npc;
     private float attackCooldown = 0.0f;
     private float animCooldown = .20f;
     public int damage = 1;
@@ -22,7 +22,7 @@ public class AttackPoint : MonoBehaviour
 
     public StaminaBar staminaBar;
     public GameObject bow;
-    public GameObject dialogue = null;
+    public GameObject dialogue;
 
     // Start is called before the first frame update
 
@@ -45,6 +45,7 @@ public class AttackPoint : MonoBehaviour
         player = transform.parent.gameObject;
         rb = GetComponent<Rigidbody2D>();
         transform.position = transform.parent.position + up;
+       
     }
 
     // Update is called once per frame
@@ -72,7 +73,7 @@ public class AttackPoint : MonoBehaviour
         {
             transform.position = transform.parent.position + right;
         }
-        if(Input.GetMouseButtonDown(0) && !bow.activeSelf && (dialogue == null || !dialogue.activeSelf) )
+        if(Input.GetMouseButtonDown(0) && !bow.activeSelf && !dialogue.activeSelf)
         {
             if(attackCooldown <= 0.0f && staminaBar.checkStaminaValue() > 0f)
             {
@@ -87,7 +88,7 @@ public class AttackPoint : MonoBehaviour
     {
         if(Other.tag == "NPC")
         {
-            npcFlag = true; 
+           npcFlag = true; 
             npc = Other.transform.GetComponent<TutorialNPC>(); //gets specific collided enemy's script.
         }
 

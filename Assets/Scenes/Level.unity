@@ -2290,8 +2290,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   npc: {fileID: 0}
   damage: 1
-  staminaBar: {fileID: 933044426}
-  bow: {fileID: 1872620650}
+  staminaBar: {fileID: 0}
+  bow: {fileID: 0}
   dialogue: {fileID: 0}
 --- !u!1 &1461869045
 GameObject:
@@ -3032,7 +3032,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b0b64cdbc85312948ad4070a7ffd9682, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 1949877890}
+  player: {fileID: 0}
 --- !u!81 &1781703836
 AudioListener:
   m_ObjectHideFlags: 0
@@ -3092,7 +3092,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1781703834}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -10}
+  m_LocalPosition: {x: 0.13, y: 0.28, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -3873,61 +3873,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2020719341}
   m_CullTransparentMesh: 1
---- !u!1 &2021679179
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 2021679180}
-  - component: {fileID: 2021679181}
-  m_Layer: 0
-  m_Name: Map
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &2021679180
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2021679179}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 4
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2021679181
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2021679179}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 328b93fac48648843a683b3b0c841f22, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  tile_grass:
-  - {fileID: 3876430769375337469, guid: e89d8c5835b1a324faca8a31d4cf8afe, type: 3}
-  - {fileID: 1897457231415287958, guid: bae132719be10f24aa30e29fba36aeba, type: 3}
-  - {fileID: 4340295796294619741, guid: 58f60c56205087640b04d9f5f77f6b69, type: 3}
-  - {fileID: 297909097454067654, guid: 90e34d3a61ed04647aa4209a88527b84, type: 3}
-  - {fileID: 1312420132355320072, guid: 6ca19595022411e4fb1f8642ee3169f9, type: 3}
-  - {fileID: 2187775821946788912, guid: eb3ad4c693d4d0c4082847094efed576, type: 3}
-  tile_wall: {fileID: 9207684531578103489, guid: 9642ecc5536213f4082a62ebc9892c47, type: 3}
-  slime: {fileID: 8608387190610410109, guid: ae06cae6642e3204dafbc763510ec020, type: 3}
-  width: 100
-  height: 100
-  mobCount: 10
 --- !u!1 &2082573562
 GameObject:
   m_ObjectHideFlags: 0
