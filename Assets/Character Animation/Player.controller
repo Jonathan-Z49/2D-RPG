@@ -80,7 +80,7 @@ BlendTree:
     m_Mirror: 0
   - serializedVersion: 2
     m_Motion: {fileID: 7400000, guid: dead8daeefabdb64d8d752972b28cfb9, type: 2}
-    m_Threshold: 0.33333334
+    m_Threshold: 0.011245317
     m_Position: {x: 0, y: 0.1}
     m_TimeScale: 1
     m_CycleOffset: 0
@@ -88,7 +88,7 @@ BlendTree:
     m_Mirror: 0
   - serializedVersion: 2
     m_Motion: {fileID: 7400000, guid: 7a7f450d20d0b66448f79b46a386adef, type: 2}
-    m_Threshold: 0.6666667
+    m_Threshold: 0.022490634
     m_Position: {x: -0.1, y: 0}
     m_TimeScale: 1
     m_CycleOffset: 0
@@ -96,8 +96,40 @@ BlendTree:
     m_Mirror: 0
   - serializedVersion: 2
     m_Motion: {fileID: 7400000, guid: 912efdc987661314f956680b7ccb8e63, type: 2}
-    m_Threshold: 1
+    m_Threshold: 0.03373595
     m_Position: {x: 0.1, y: 0}
+    m_TimeScale: 1
+    m_CycleOffset: 0
+    m_DirectBlendParameter: Horizontal
+    m_Mirror: 0
+  - serializedVersion: 2
+    m_Motion: {fileID: 7400000, guid: db242cbb48d6bbc45ae6fbbab6b96e06, type: 2}
+    m_Threshold: 0.044981267
+    m_Position: {x: 0.1, y: -0.1}
+    m_TimeScale: 1
+    m_CycleOffset: 0
+    m_DirectBlendParameter: Horizontal
+    m_Mirror: 0
+  - serializedVersion: 2
+    m_Motion: {fileID: 7400000, guid: db242cbb48d6bbc45ae6fbbab6b96e06, type: 2}
+    m_Threshold: 0.056226585
+    m_Position: {x: -0.1, y: -0.1}
+    m_TimeScale: 1
+    m_CycleOffset: 0
+    m_DirectBlendParameter: Horizontal
+    m_Mirror: 0
+  - serializedVersion: 2
+    m_Motion: {fileID: 7400000, guid: dead8daeefabdb64d8d752972b28cfb9, type: 2}
+    m_Threshold: 0.0674719
+    m_Position: {x: -0.1, y: 0.1}
+    m_TimeScale: 1
+    m_CycleOffset: 0
+    m_DirectBlendParameter: Horizontal
+    m_Mirror: 0
+  - serializedVersion: 2
+    m_Motion: {fileID: 7400000, guid: dead8daeefabdb64d8d752972b28cfb9, type: 2}
+    m_Threshold: 0.07871722
+    m_Position: {x: 0.1, y: 0.1}
     m_TimeScale: 1
     m_CycleOffset: 0
     m_DirectBlendParameter: Horizontal
@@ -105,7 +137,7 @@ BlendTree:
   m_BlendParameter: LastHmove
   m_BlendParameterY: LastVmove
   m_MinThreshold: 0
-  m_MaxThreshold: 1
+  m_MaxThreshold: 0.07871722
   m_UseAutomaticThresholds: 1
   m_NormalizedBlendValues: 0
   m_BlendType: 1
@@ -287,7 +319,7 @@ AnimatorController:
     m_Controller: {fileID: 0}
   - m_Name: LastHmove
     m_Type: 1
-    m_DefaultFloat: 0
+    m_DefaultFloat: 0.1
     m_DefaultInt: 0
     m_DefaultBool: 0
     m_Controller: {fileID: 0}
@@ -595,7 +627,7 @@ AnimatorStateMachine:
     m_Position: {x: 30, y: 230, z: 0}
   - serializedVersion: 1
     m_State: {fileID: -3434080341837356687}
-    m_Position: {x: 301.94922, y: 201.70314, z: 0}
+    m_Position: {x: 310, y: 200, z: 0}
   m_ChildStateMachines: []
   m_AnyStateTransitions: []
   m_EntryTransitions: []
