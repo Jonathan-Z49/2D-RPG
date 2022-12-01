@@ -12,7 +12,8 @@ public class AttackPoint : MonoBehaviour
     private bool ableAttack = false;
     private bool npcFlag = false;
     
-    private MonoBehaviour Enemy;        //fixed, dont have to manually select enemy anymore.
+    public GameObject[] Enemys;        //fixed, dont have to manually select enemy anymore.
+    public List<GameObject> EnemysInTrigger;
 
     private Rigidbody2D rb;
     Vector3 right = new Vector3(1, 0, 0);
@@ -35,8 +36,13 @@ public class AttackPoint : MonoBehaviour
         player.GetComponent<Movement>().setStamTimer();
         if(ableAttack)
         {
-            //Debug.Log("Attacked");
-            Enemy.GetComponent<SlimeController>().takeDamage(damage); 
+            foreach(var enemy in Enemys)
+            {
+                if(EnemysInTrigger.Contains(enemy))
+                {
+                    enemy.GetComponent<SlimeController>().takeDamage(damage);
+                }
+            }
         }
     }
 
@@ -45,32 +51,38 @@ public class AttackPoint : MonoBehaviour
         player = transform.parent.gameObject;
         rb = GetComponent<Rigidbody2D>();
         transform.position = transform.parent.position + up;
+        Enemys = GameObject.FindGameObjectsWithTag("Enemy");
     }
 
     // Update is called once per frame
     void Update()
     {
+        Enemys = GameObject.FindGameObjectsWithTag("Enemy");
         attackCooldown = attackCooldown - Time.deltaTime;
         animCooldown -= Time.deltaTime;
         if(animCooldown <= 0)
         {
             player.GetComponent<Animator>().SetBool("isAttacking", false);
         }
-        if (Input.GetKeyDown("w"))
-        {
-            transform.position = transform.parent.position + up;
-        }
-        if (Input.GetKeyDown("a"))
+        if (Input.GetAxisRaw("Horizontal") < 0 )//a
         {
             transform.position = transform.parent.position + left;
+            transform.localScale = new Vector3(1.5f, 2, 0);
         }
-        if (Input.GetKeyDown("s"))
-        {
-            transform.position = transform.parent.position + down;
-        }
-        if (Input.GetKeyDown("d"))
+        if (Input.GetAxisRaw("Horizontal") > 0)//d
         {
             transform.position = transform.parent.position + right;
+            transform.localScale = new Vector3(1.5f, 2, 0);
+        }
+        if (Input.GetAxisRaw("Vertical") < 0)//s
+        {
+            transform.position = transform.parent.position + down;
+            transform.localScale = new Vector3(2, 1.75f, 0);
+        }
+        if (Input.GetAxisRaw("Vertical") > 0)//w
+        {
+            transform.position = transform.parent.position + up;
+            transform.localScale = new Vector3(2, 1.75f, 0);
         }
         if(Input.GetMouseButtonDown(0) && !bow.activeSelf && (dialogue == null || !dialogue.activeSelf) )
         {
@@ -94,7 +106,8 @@ public class AttackPoint : MonoBehaviour
         if(Other.tag == "Enemy")
         {
             ableAttack = true;
-            Enemy = Other.transform.GetComponent<SlimeController>(); //gets specific collided enemy's script.
+            //Enemy = Other.transform.GetComponent<SlimeController>(); //gets specific collided enemy's script.
+            EnemysInTrigger.Add(Other.gameObject);
         }
     }
 
@@ -108,6 +121,7 @@ public class AttackPoint : MonoBehaviour
         if(Other.tag == "Enemy")
         {
             ableAttack = false;
+            EnemysInTrigger.Remove(Other.gameObject);
         }
     }
 
