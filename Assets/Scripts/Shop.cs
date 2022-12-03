@@ -68,7 +68,7 @@ public class Shop : MonoBehaviour
             animControllerMessageSuccess.Rebind();
             animControllerMessageSuccess.Update(0f);
             costOfItem = int.Parse(activeShop.transform.Find("Item1/item container/item cost").GetComponent<Text>().text);
-            if (player.coins >= costOfItem)
+            if (PlayerStats.coins >= costOfItem)
             {
                 animControllerMessageSuccess.SetTrigger("fadeIn");
                 textSuccessMessage.text = "You have purchased 1 " + itemName.text;

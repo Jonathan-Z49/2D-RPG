@@ -8,10 +8,12 @@ public class mapGenerator : MonoBehaviour
     Dictionary<int, GameObject> tile_groups;
     public GameObject[] tile_grass;
     public GameObject tile_wall;
+    public GameObject perimeter_wall;
+    public GameObject dirt_path;
     public GameObject slime;
  
-    public int width = 100;
-    public int height = 100;
+    private int width = 100;
+    private int height = 100;
 
     public int mobCount = 10;
  
@@ -79,16 +81,26 @@ public class mapGenerator : MonoBehaviour
     void CreateTile(int tile_id, int x, int y)
     {
         GameObject tile_prefab = tileset[tile_id];
+        GameObject tile_group = tile_groups[tile_id];
+        GameObject tile;
         if (tile_id == 0)
         {
             tile_prefab = tile_grass[Random.Range(0, tile_grass.Length)];
         }
-        GameObject tile_group = tile_groups[tile_id];
-        GameObject tile = Instantiate(tile_prefab, tile_group.transform);
- 
+        if (x == 0 || y == 0 || x == height - 1 || y == width - 1)
+        {
+            tile_prefab = perimeter_wall;
+            tile_group = tile_groups[1];
+        }
+        if ((x > ((width / 2) - 3) && x < ((width / 2) + 3)) && (y >= 0 && y < 7))
+        {
+            tile_prefab = dirt_path;
+            tile_group = tile_groups[0];
+        }
+
+        tile = Instantiate(tile_prefab, tile_group.transform);
         tile.name = string.Format("tile_x{0}_y{1}", x, y);
-        tile.transform.localPosition = new Vector2(x, y);
- 
+        tile.transform.localPosition = new Vector2(x, y);    
         grid[x].Add(tile);
     }
 

@@ -19,11 +19,9 @@ public class Hotbar : MonoBehaviour
     public GameObject Bow;
     private EventSystem eventSystem = EventSystem.current;
     private GameObject Player;
-    private Movement playerStats;
     void Start()
     {
         Player = GameObject.FindWithTag("Player");
-        playerStats = Player.GetComponent<Movement>();
         healthButton = healthTile.transform.GetChild(0).GetComponent<Button>();
         staminaButton = staminaTile.transform.GetChild(0).GetComponent<Button>();
         bowButton = bowTile.transform.GetChild(0).GetComponent<Button>();
@@ -35,9 +33,9 @@ public class Hotbar : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        healthText.text = playerStats.healthPotCount.ToString() + "x";
-        staminaText.text = playerStats.staminaPotCount.ToString() + "x";
-        arrowText.text = playerStats.arrowCount.ToString() + "x";
+        healthText.text = PlayerStats.healthPotCount.ToString() + "x";
+        staminaText.text = PlayerStats.staminaPotCount.ToString() + "x";
+        arrowText.text = PlayerStats.arrowCount.ToString() + "x";
 
         if (Input.GetKeyDown(KeyCode.Alpha1))
         {
