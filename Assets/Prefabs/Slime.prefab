@@ -292,6 +292,7 @@ GameObject:
   - component: {fileID: 8608387190610410051}
   - component: {fileID: 8608387190610410048}
   - component: {fileID: 8608387190610410049}
+  - component: {fileID: -1823706587948462865}
   m_Layer: 0
   m_Name: Slime
   m_TagString: Enemy
@@ -449,9 +450,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e6ee3423dbd6ec94787ddb38eb0e7d33, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerScript: {fileID: 0}
   health: 3
   CoinPrefab: {fileID: 8486888155627025113, guid: 06fe19022f211144da1046232ce02867, type: 3}
+  animator: {fileID: 8608387190610410108}
+--- !u!114 &-1823706587948462865
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8608387190610410109}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 65773b1d9b2292f42b9f73267f035a1c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  slime: {fileID: 8608387190610410049}
+  playerScript: {fileID: 0}
   animator: {fileID: 8608387190610410108}
 --- !u!1 &8608387190971072131
 GameObject:

@@ -11,10 +11,10 @@ public class Movement : MonoBehaviour
     public StaminaBar staminaBar;
     private float stamRecovery = 1f;
     private float stamTimer = 2.5f;
-    public int coins;
-    public int staminaPotCount = 0;
-    public int healthPotCount = 0;
-    public int arrowCount = 0;
+    public int coins = PlayerStats.coins;
+    public int staminaPotCount = PlayerStats.staminaPotCount;
+    public int healthPotCount = PlayerStats.healthPotCount;
+    public int arrowCount = PlayerStats.arrowCount;
     private float _SPEED;
     //private float _DIRECTION_X = 0f;
     //private float _DIRECTION_Y = 0f;
@@ -96,12 +96,16 @@ public class Movement : MonoBehaviour
 
     public void addCoins(int amount)
     {
-        coins += amount;
+        PlayerStats.coins += amount;
         //Debug.Log("added: " + amount + ", total: " + coins);
     }
     public void subtractCoins(int amount)
     {
-        coins -= amount;
+        PlayerStats.coins -= amount;
+        if (PlayerStats.coins <= 0)
+        {
+            PlayerStats.coins = 0;
+        }
         //Debug.Log("added: " + amount + ", total: " + coins);
     }
 
@@ -112,37 +116,46 @@ public class Movement : MonoBehaviour
     }
 
     public void addHealthPot() {
-        healthPotCount++;
+        if (PlayerStats.coins > 0)
+        {
+            PlayerStats.healthPotCount++;
+        }
     }
 
     public void addStaminaPot() {
-        staminaPotCount++;
+        if (PlayerStats.coins > 0)
+        {
+            PlayerStats.staminaPotCount++;
+        }
     }
 
     public void useStaminaPot() {
-        if (staminaPotCount > 0)
+        if (PlayerStats.staminaPotCount > 0)
         {
-            staminaPotCount--;
+            PlayerStats.staminaPotCount--;
             staminaBar.setMaxStamina(maxStamina);
         }
     }
 
     public void addArrows() {
-        arrowCount++;
+        if (PlayerStats.coins > 0)
+        {
+            PlayerStats.arrowCount++;            
+        }
     }
 
     public void useArrow() {
-        if (arrowCount > 0)
+        if (PlayerStats.arrowCount > 0)
         {
-            arrowCount--;
+            PlayerStats.arrowCount--;
         }
     }
 
     public void increaseMaxHealth()
     {
-        if (healthPotCount > 0)
+        if (PlayerStats.healthPotCount > 0)
         {
-            healthPotCount--;
+            PlayerStats.healthPotCount--;
             maxHealth += 1;
             healthBar.setMaxHealth(maxHealth);
             currentHealth = maxHealth;

@@ -7,6 +7,7 @@ public class SceneTransition : MonoBehaviour
 {
     
     // Start is called before the first frame update
+    public string SceneToLoad;
     void Start()
     {
         
@@ -21,7 +22,7 @@ public class SceneTransition : MonoBehaviour
     {
         if(Other.tag == "Player")
         {
-            SceneManager.LoadScene("Level");
+            SceneManager.LoadScene(SceneToLoad);
         }
     }
 }
