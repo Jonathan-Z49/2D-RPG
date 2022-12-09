@@ -9,7 +9,7 @@ public class RangedSlimeMovement : MonoBehaviour
     private GameObject player;
     private Transform target;
     private bool inRange = false;
-    private float _SPEED = .015f;
+    private float _SPEED = .050f;
     private float attackTimer = 1.0f;
     public Animator animator;
     public GameObject slimeball;
@@ -39,33 +39,42 @@ public class RangedSlimeMovement : MonoBehaviour
         else if (localPos.x > 0.0f)                                                     //right of slime 
             gameObject.GetComponent<SpriteRenderer>().flipX = true;                    //face sprite right
         
-        if(inRange == false)
+        if(slime.getHealth() <= 0)
         {
-           
+            zeroSpeed();
+        }
+        
+    }
+
+    void FixedUpdate()
+    {
+        if (inRange == false)
+        {
+
             transform.position = Vector3.MoveTowards(transform.position, target.transform.position, _SPEED);
-            if(animator.GetCurrentAnimatorStateInfo(0).normalizedTime > 1 && !animator.IsInTransition(0))
+            if (animator.GetCurrentAnimatorStateInfo(0).normalizedTime > 1 && !animator.IsInTransition(0))
             {
-                if(animator.GetBool("Moving") == true)
+                if (animator.GetBool("Moving") == true)
                 {
-                    _SPEED = 0f;
-                    animator.SetBool("Moving", false);  
+                    zeroSpeed();
+                    animator.SetBool("Moving", false);
                     var ball = Instantiate(slimeball, transform.position, slimeballPoint.rotation);
                 }
-                else if(animator.GetBool("Moving") == false)
+                else if (animator.GetBool("Moving") == false)
                 {
-                    _SPEED = .015f;
+                    _SPEED = .050f;
                     animator.SetBool("Moving", true);
-                }   
+                }
             }
         }
-        else if(inRange == true)
+        else if (inRange == true)
         {
-            if(attackTimer <= 0f) //enemy attack cooldown
+            if (attackTimer <= 0f) //enemy attack cooldown
             {
                 playerScript.takeDamage(1);
                 attackTimer = 1.0f;
             }
-            
+
         }
         else
         {
