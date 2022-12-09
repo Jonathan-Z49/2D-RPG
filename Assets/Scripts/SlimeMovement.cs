@@ -10,7 +10,7 @@ public class SlimeMovement : MonoBehaviour
     private Transform target;
     private bool inRange = false;
     private Rigidbody2D rb;
-    private float _SPEED = .015f;
+    private float _SPEED = .050f;
     private float attackTimer = 1.0f;
     public Animator animator;
 
@@ -34,27 +34,31 @@ public class SlimeMovement : MonoBehaviour
         else if (localPos.x > 0.0f)                                                     //right of slime 
             gameObject.GetComponent<SpriteRenderer>().flipX = true;                    //face sprite right
         
-        if(inRange == false)
+        if(slime.getHealth() == 0)
+        {
+            _SPEED = 0;
+        }
+    }
+
+    void FixedUpdate()
+    {
+        if (inRange == false)
         {
             animator.SetBool("Moving", true);
             transform.position = Vector3.MoveTowards(transform.position, target.transform.position, _SPEED);
         }
-        else if(inRange == true)
+        else if (inRange == true)
         {
-            if(attackTimer <= 0f) //enemy attack cooldown
+            if (attackTimer <= 0f) //enemy attack cooldown
             {
                 playerScript.takeDamage(1);
                 attackTimer = 1.0f;
             }
-            
+
         }
         else
         {
             animator.SetBool("Moving", false);
-        }
-        if(slime.getHealth() == 0)
-        {
-            _SPEED = 0;
         }
     }
 
