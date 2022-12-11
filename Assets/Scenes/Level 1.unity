@@ -5501,11 +5501,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b8012f2e74916ab46a1f9b0513c51a29, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tile_grass: []
-  tile_wall: {fileID: 0}
-  perimeter_wall: {fileID: 0}
-  dirt_path: {fileID: 0}
-  slime: {fileID: 0}
+  tile_grass:
+  - {fileID: 3876430769375337469, guid: e89d8c5835b1a324faca8a31d4cf8afe, type: 3}
+  - {fileID: 1897457231415287958, guid: bae132719be10f24aa30e29fba36aeba, type: 3}
+  - {fileID: 4340295796294619741, guid: 58f60c56205087640b04d9f5f77f6b69, type: 3}
+  - {fileID: 297909097454067654, guid: 90e34d3a61ed04647aa4209a88527b84, type: 3}
+  - {fileID: 1312420132355320072, guid: 6ca19595022411e4fb1f8642ee3169f9, type: 3}
+  - {fileID: 2187775821946788912, guid: eb3ad4c693d4d0c4082847094efed576, type: 3}
+  tile_wall: {fileID: 9207684531578103489, guid: 9642ecc5536213f4082a62ebc9892c47, type: 3}
+  perimeter_wall: {fileID: 8261074691092454279, guid: 34e7f31d9a37dc44f877315637ea2061, type: 3}
+  dirt_path: {fileID: 5003443764032333488, guid: cdab218662e81c647b3c3fd7782afbd5, type: 3}
+  slime: {fileID: 8096864227634323004, guid: 2eace4caae1cd9e4e9ae3f9c26e1faa5, type: 3}
   mobCount: 10
 --- !u!1 &2082573562
 GameObject:

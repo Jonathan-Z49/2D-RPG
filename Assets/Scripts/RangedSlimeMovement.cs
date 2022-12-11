@@ -58,7 +58,10 @@ public class RangedSlimeMovement : MonoBehaviour
                 {
                     zeroSpeed();
                     animator.SetBool("Moving", false);
-                    var ball = Instantiate(slimeball, transform.position, slimeballPoint.rotation);
+                    if (Vector2.Distance(target.transform.position, transform.position) < 15.0f)
+                    {
+                        var ball = Instantiate(slimeball, transform.position, slimeballPoint.rotation);
+                    }
                 }
                 else if (animator.GetBool("Moving") == false)
                 {
