@@ -277,6 +277,96 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 19440343}
   m_CullTransparentMesh: 1
+--- !u!1 &24476545
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 24476546}
+  - component: {fileID: 24476549}
+  - component: {fileID: 24476548}
+  - component: {fileID: 24476547}
+  m_Layer: 5
+  m_Name: Image
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &24476546
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 24476545}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 1239041866}
+  m_Father: {fileID: 382518538}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &24476547
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 24476545}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 31a19414c41e5ae4aae2af33fee712f6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_ShowMaskGraphic: 0
+--- !u!114 &24476548
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 24476545}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: -2413806693520163455, guid: 4adeaf2d2b1c7417e89f026626d8264f, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &24476549
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 24476545}
+  m_CullTransparentMesh: 1
 --- !u!1 &26826015
 GameObject:
   m_ObjectHideFlags: 0
@@ -1060,7 +1150,7 @@ GameObject:
   m_Component:
   - component: {fileID: 205448001}
   - component: {fileID: 205448002}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Bear Sprite(Sword)_9
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1216,7 +1306,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 235719420}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: AttackR
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1716,7 +1806,7 @@ GameObject:
   m_Component:
   - component: {fileID: 366584758}
   - component: {fileID: 366584759}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Bear Sprite(Sword)_0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1788,6 +1878,82 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &382518537
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 382518538}
+  - component: {fileID: 382518540}
+  - component: {fileID: 382518539}
+  m_Layer: 5
+  m_Name: Image
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &382518538
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 382518537}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 24476546}
+  m_Father: {fileID: 1076691373}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 450, y: -200}
+  m_SizeDelta: {x: 110, y: 110}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &382518539
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 382518537}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0, g: 0, b: 0, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: -2413806693520163455, guid: 4adeaf2d2b1c7417e89f026626d8264f, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &382518540
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 382518537}
+  m_CullTransparentMesh: 1
 --- !u!1 &401233334
 GameObject:
   m_ObjectHideFlags: 0
@@ -1992,7 +2158,7 @@ GameObject:
   m_Component:
   - component: {fileID: 406498090}
   - component: {fileID: 406498091}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Bear Sprite(Sword)_4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2074,7 +2240,7 @@ GameObject:
   m_Component:
   - component: {fileID: 406601834}
   - component: {fileID: 406601835}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Bear Sprite(Sword)_11
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2531,7 +2697,7 @@ GameObject:
   m_Component:
   - component: {fileID: 522053425}
   - component: {fileID: 522053426}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Bear Sprite(Sword)_8
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3046,6 +3212,94 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 650607561}
   m_CullTransparentMesh: 1
+--- !u!1 &694747422
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 694747426}
+  - component: {fileID: 694747425}
+  - component: {fileID: 694747423}
+  m_Layer: 0
+  m_Name: Minimap cam
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &694747423
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 694747422}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b0b64cdbc85312948ad4070a7ffd9682, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 1042933729}
+--- !u!20 &694747425
+Camera:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 694747422}
+  m_Enabled: 1
+  serializedVersion: 2
+  m_ClearFlags: 2
+  m_BackGroundColor: {r: 0.44705883, g: 0.45882353, b: 0.10980392, a: 1}
+  m_projectionMatrixMode: 1
+  m_GateFitMode: 2
+  m_FOVAxisMode: 0
+  m_SensorSize: {x: 36, y: 24}
+  m_LensShift: {x: 0, y: 0}
+  m_FocalLength: 50
+  m_NormalizedViewPortRect:
+    serializedVersion: 2
+    x: 0
+    y: 0
+    width: 1
+    height: 1
+  near clip plane: 0.3
+  far clip plane: 1000
+  field of view: 60
+  orthographic: 0
+  orthographic size: 5
+  m_Depth: 0
+  m_CullingMask:
+    serializedVersion: 2
+    m_Bits: 255
+  m_RenderingPath: -1
+  m_TargetTexture: {fileID: 8400000, guid: 717beb537fd328a43a42650745a0ba5e, type: 2}
+  m_TargetDisplay: 0
+  m_TargetEye: 3
+  m_HDR: 1
+  m_AllowMSAA: 1
+  m_AllowDynamicResolution: 0
+  m_ForceIntoRT: 0
+  m_OcclusionCulling: 1
+  m_StereoConvergence: 10
+  m_StereoSeparation: 0.022
+--- !u!4 &694747426
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 694747422}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.13, y: 22.99, z: -10}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 12
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &702899547
 GameObject:
   m_ObjectHideFlags: 0
@@ -3408,7 +3662,7 @@ GameObject:
   m_Component:
   - component: {fileID: 816051878}
   - component: {fileID: 816051879}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Square
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3601,7 +3855,7 @@ GameObject:
   m_Component:
   - component: {fileID: 846194353}
   - component: {fileID: 846194354}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Bear Sprite(Sword)_3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4101,7 +4355,7 @@ GameObject:
   m_Component:
   - component: {fileID: 949330682}
   - component: {fileID: 949330683}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Bear Sprite(Sword)_6
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4278,7 +4532,7 @@ GameObject:
   m_Component:
   - component: {fileID: 961402179}
   - component: {fileID: 961402180}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Bear Sprite(Sword)_5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4927,7 +5181,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1033288060}
   - component: {fileID: 1033288061}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Bear Sprite(Sword)_7
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5013,7 +5267,7 @@ GameObject:
   - component: {fileID: 1042933726}
   - component: {fileID: 1042933725}
   - component: {fileID: 1042933724}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Bear_Knight
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -5164,7 +5418,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1042933723}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 23.07, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1824502830}
@@ -5172,6 +5426,7 @@ Transform:
   - {fileID: 235719420}
   - {fileID: 1796827480}
   - {fileID: 1279701832}
+  - {fileID: 1836057443}
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -5415,6 +5670,42 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1076005337}
   m_CullTransparentMesh: 1
+--- !u!1 &1076691372
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1076691373}
+  m_Layer: 5
+  m_Name: Minimap
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1076691373
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1076691372}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 382518538}
+  m_Father: {fileID: 1851275153}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1082977458
 GameObject:
   m_ObjectHideFlags: 0
@@ -16349,6 +16640,78 @@ CanvasRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1231551753}
+  m_CullTransparentMesh: 1
+--- !u!1 &1239041865
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1239041866}
+  - component: {fileID: 1239041868}
+  - component: {fileID: 1239041867}
+  m_Layer: 5
+  m_Name: Map_image
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1239041866
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1239041865}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 24476546}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1239041867
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1239041865}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1344c3c82d62a2a41a3576d8abb8e3ea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Texture: {fileID: 8400000, guid: 717beb537fd328a43a42650745a0ba5e, type: 2}
+  m_UVRect:
+    serializedVersion: 2
+    x: 0
+    y: 0
+    width: 1
+    height: 1
+--- !u!222 &1239041868
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1239041865}
   m_CullTransparentMesh: 1
 --- !u!1 &1249743597
 GameObject:
@@ -49862,7 +50225,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1279701832}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: AttackB
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -51192,7 +51555,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1478219498}
   - component: {fileID: 1478219499}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Bear Sprite(Sword)_2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -51559,7 +51922,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1632194452}
   - component: {fileID: 1632194453}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Bear Sprite(Sword)_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -52005,7 +52368,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1734260025}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: AttackL
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -52076,7 +52439,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1746280460}
   - component: {fileID: 1746280461}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Bear Sprite(Sword)_10
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -52410,7 +52773,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1796827480}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: AttackF
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -52522,7 +52885,7 @@ GameObject:
   - component: {fileID: 1824502830}
   - component: {fileID: 1824502832}
   - component: {fileID: 1824502831}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: 'Attack Point '
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -52664,6 +53027,88 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1830424581}
   m_CullTransparentMesh: 1
+--- !u!1 &1836057442
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1836057443}
+  - component: {fileID: 1836057444}
+  m_Layer: 7
+  m_Name: minimap
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1836057443
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1836057442}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 2, y: 2, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1042933729}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!212 &1836057444
+SpriteRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1836057442}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 4
+  m_Sprite: {fileID: -2413806693520163455, guid: 4adeaf2d2b1c7417e89f026626d8264f, type: 3}
+  m_Color: {r: 0.7092382, g: 1, b: 0, a: 1}
+  m_FlipX: 0
+  m_FlipY: 0
+  m_DrawMode: 0
+  m_Size: {x: 1, y: 1}
+  m_AdaptiveModeThreshold: 0.5
+  m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 1
+  m_MaskInteraction: 0
+  m_SpriteSortPoint: 0
 --- !u!1 &1851275149
 GameObject:
   m_ObjectHideFlags: 0
@@ -52762,6 +53207,7 @@ RectTransform:
   - {fileID: 482028620}
   - {fileID: 1045064184}
   - {fileID: 170011438}
+  - {fileID: 1076691373}
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -57686,7 +58132,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 325eae93c8f05db48b2fbc8069078c50, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SceneToLoad: Level
+  SceneToLoad: Level 1
 --- !u!61 &1864922608
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -61831,7 +62277,7 @@ Camera:
   m_Depth: 0
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 383
   m_RenderingPath: -1
   m_TargetTexture: {fileID: 0}
   m_TargetDisplay: 0
