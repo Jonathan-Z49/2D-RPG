@@ -66,7 +66,7 @@ public class showNPCTalkButton : MonoBehaviour
         }
         else
         {
-            questItem.SetActive(true);
+            //questItem.SetActive(true);
             playerScript.activateQuest();
             dialogue.dialogueToSay = " ";
             dialogue.dialogueTextUI.text = "";
