@@ -14,6 +14,8 @@ public class RangedSlimeMovement : MonoBehaviour
     public Animator animator;
     public GameObject slimeball;
     public Transform slimeballPoint;
+    public Transform questItem;
+    private bool hasQuestItem = false;
 
     // Start is called before the first frame update
     void Start()
@@ -42,8 +44,12 @@ public class RangedSlimeMovement : MonoBehaviour
         if(slime.getHealth() <= 0)
         {
             zeroSpeed();
+            if(hasQuestItem == true)
+            {
+                var item = Instantiate(questItem, transform.position, transform.rotation);
+            }
         }
-        
+
     }
 
     void FixedUpdate()
@@ -104,5 +110,11 @@ public class RangedSlimeMovement : MonoBehaviour
     public void zeroSpeed()
     {
         _SPEED = 0;
+    }
+
+    public void assignQuestItem()
+    {
+        hasQuestItem = true;
+        Debug.Log("i have item");
     }
 }

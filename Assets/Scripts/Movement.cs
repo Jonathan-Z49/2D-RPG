@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Movement : MonoBehaviour
 {
@@ -23,8 +24,8 @@ public class Movement : MonoBehaviour
     private float attackCounter;
     private bool isAttacking;
     Vector2 movement;
-    private bool questActive = false;
-    private bool questItemHeld = false;
+    private bool questActive = PlayerStats.questActive;
+    private bool questItemHeld = PlayerStats.questItemHeld;
 
     // Start is called before the first frame update
     void Start()
@@ -34,6 +35,13 @@ public class Movement : MonoBehaviour
         playerRigidBody = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
         animator.SetFloat("LastVmove", 1);
+        Scene currentScene = SceneManager.GetActiveScene ();
+        string sceneName = currentScene.name;
+        if(sceneName == "Town" && PlayerStats.firstEntrance == true)
+        {
+            transform.position = new Vector3(-18,-5, 0);
+            PlayerStats.firstEntrance = false;
+        }
     }
 
     // Update is called once per frame
@@ -165,17 +173,17 @@ public class Movement : MonoBehaviour
 
     public void activateQuest()
     {
-        questActive = true;
+        PlayerStats.questActive = true;
     }
 
     public void deactivateQuest()
     {
-        questActive = false;
+        PlayerStats.questActive = false;
     }
 
     public bool checkActiveStatus()
     {
-        if(questActive == true)
+        if(PlayerStats.questActive == true)
         {
             return(true);
         }
@@ -184,17 +192,17 @@ public class Movement : MonoBehaviour
 
     public void getQuestItem()
     {
-        questItemHeld = true;
+        PlayerStats.questItemHeld = true;
     }
 
     public void removeQuestItem()
     {
-        questItemHeld = false;
+        PlayerStats.questItemHeld = false;
     }
 
     public bool checkQuestItem()
     {
-        if(questItemHeld == true)
+        if(PlayerStats.questItemHeld == true)
         {
             return(true);
         }

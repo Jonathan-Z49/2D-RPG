@@ -284,6 +284,7 @@ MonoBehaviour:
   animator: {fileID: 8096864227634322977}
   slimeball: {fileID: 9207194261633327978, guid: fd6be466dd3831b47a11f65c82fdd5f0, type: 3}
   slimeballPoint: {fileID: 8096864226850205327}
+  questItem: {fileID: 3405972704296149572, guid: 7383561cfcb48b345b5b3fb64f5e1a7f, type: 3}
 --- !u!114 &8096864227634323005
 MonoBehaviour:
   m_ObjectHideFlags: 0
