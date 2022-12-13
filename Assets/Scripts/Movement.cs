@@ -6,8 +6,9 @@ using UnityEngine.SceneManagement;
 public class Movement : MonoBehaviour
 {
     public int currentHealth;
-    private int maxHealth = 10;
+    private int maxHealth = PlayerStats.health;
     public HealthBar healthBar;
+    public GameObject deathUI = null;
     private float maxStamina = 5f;
     public StaminaBar staminaBar;
     private float stamRecovery = 1f;
@@ -45,57 +46,66 @@ public class Movement : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
-    {
-        //playerRigidBody.MovePosition(playerRigidBody.position + movement * _SPEED * Time.deltaTime);
-        movement.x = Input.GetAxisRaw("Horizontal"); 
-        movement.y = Input.GetAxisRaw("Vertical"); 
-        
-        animator.SetFloat("Horizontal", movement.x);
-        animator.SetFloat("Vertical", movement.y);
-
-        if(Input.GetAxisRaw("Horizontal") == 1 || Input.GetAxisRaw("Horizontal") == -1 || Input.GetAxisRaw("Vertical") == 1 || Input.GetAxisRaw("Vertical") == -1)
-        {
-            animator.SetFloat(("LastHmove"), Input.GetAxisRaw("Horizontal"));
-            animator.SetFloat(("LastVmove"), Input.GetAxisRaw("Vertical"));
-        }
-
-        //health bar debugging
-        if(Input.GetKeyDown("i"))
-        {
-            this.takeDamage(1);
-        }
-        if(Input.GetKeyDown("o"))
-        {
-            increaseMaxHealth();
-        }
-
-        if(Input.GetKey(KeyCode.LeftShift) && staminaBar.checkStaminaValue() > 0)
-        {
-            if(animator.GetFloat("Horizontal") != 0 || animator.GetFloat("Vertical") != 0)
-            {
-                setStamTimer();
-                _SPEED = 11.0f;
-                staminaBar.useStamina(Time.deltaTime);  
-            }
-        }
-        else
-        {
-            _SPEED = 7.0f;
-        }
-        
-        stamTimer -= Time.deltaTime;
-        if(stamTimer <= 0)
-        {
-            staminaBar.recoverStamina(stamRecovery);
-        }
-    }
 
     void FixedUpdate()
     {
-      playerRigidBody.MovePosition(playerRigidBody.position + movement * _SPEED * Time.deltaTime);
+        Debug.Log(PlayerStats.health);
+        Debug.Log(PlayerStats.health > 0 && SceneManager.GetActiveScene().name != "Game" || deathUI == null);
+      if (PlayerStats.health > 0 && SceneManager.GetActiveScene().name != "Game" || deathUI == null)
+      {
+        playerRigidBody.MovePosition(playerRigidBody.position + movement * _SPEED * Time.deltaTime);
+        //playerRigidBody.MovePosition(playerRigidBody.position + movement * _SPEED * Time.deltaTime);
+          movement.x = Input.GetAxisRaw("Horizontal"); 
+          movement.y = Input.GetAxisRaw("Vertical"); 
+          
+          animator.SetFloat("Horizontal", movement.x);
+          animator.SetFloat("Vertical", movement.y);
+  
+          if(Input.GetAxisRaw("Horizontal") == 1 || Input.GetAxisRaw("Horizontal") == -1 || Input.GetAxisRaw("Vertical") == 1 || Input.GetAxisRaw("Vertical") == -1)
+          {
+              animator.SetFloat(("LastHmove"), Input.GetAxisRaw("Horizontal"));
+              animator.SetFloat(("LastVmove"), Input.GetAxisRaw("Vertical"));
+          }
+  
+          //health bar debugging
+          if(Input.GetKeyDown("i"))
+          {
+              this.takeDamage(1);
+          }
+          if(Input.GetKeyDown("o"))
+          {
+              increaseMaxHealth();
+          }
+  
+          if(Input.GetKey(KeyCode.LeftShift) && staminaBar.checkStaminaValue() > 0)
+          {
+              if(animator.GetFloat("Horizontal") != 0 || animator.GetFloat("Vertical") != 0)
+              {
+                  setStamTimer();
+                  _SPEED = 11.0f;
+                  staminaBar.useStamina(Time.deltaTime);  
+              }
+          }
+          else
+          {
+              _SPEED = 7.0f;
+          }
+          
+          stamTimer -= Time.deltaTime;
+          if(stamTimer <= 0)
+          {
+              staminaBar.recoverStamina(stamRecovery);
+          }
+      } else {
+        deathUI.SetActive(true);
+      }
     }
 
+    public void onDeath() {
+        Scene _scene = SceneManager.GetActiveScene();
+        SceneManager.LoadScene(_scene.name);
+        PlayerStats.health = 10;
+     }
 
     public void setSpeed(float s)
     {
@@ -119,8 +129,8 @@ public class Movement : MonoBehaviour
 
     public void takeDamage(int dam)
     {
-        currentHealth -= dam;
-        healthBar.setHealth(currentHealth);
+        PlayerStats.health -= dam;
+        healthBar.setHealth(PlayerStats.health);
     }
 
     public void addHealthPot() {
@@ -164,10 +174,10 @@ public class Movement : MonoBehaviour
         if (PlayerStats.healthPotCount > 0)
         {
             PlayerStats.healthPotCount--;
-            maxHealth += 1;
-            healthBar.setMaxHealth(maxHealth);
-            currentHealth = maxHealth;
-            healthBar.setHealth(currentHealth);
+            PlayerStats.health += 1;
+            healthBar.setMaxHealth(PlayerStats.health);
+            currentHealth = PlayerStats.health;
+            healthBar.setHealth(PlayerStats.health);
         }
     }
 
